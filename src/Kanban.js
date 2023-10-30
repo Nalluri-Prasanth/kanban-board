@@ -6,6 +6,7 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import update from "immutability-helper";
 import KanbanColumn from "./KanbanColumn";
 import KanbanItem from "./KanbanItem";
+import DoubleDropdown from "./DoubleDropdown";
 
 const tasksList = [
   { _id: 1, title: "First Task", status: "backlog" },
@@ -38,7 +39,7 @@ const classes = {
   },
   column: {
     minWidth: 200,
-    width: "18vw",
+    width: "20vw",
     height: "100vh",
     margin: "0 auto",
     backgroundColor: "#F5F7F8"
@@ -77,6 +78,8 @@ const Kanban = () => {
   return (
     <main>
       <header> Kanban Board </header>
+      <DoubleDropdown></DoubleDropdown>
+      
       <DndProvider backend={HTML5Backend}>
         <section style={classes.board}>
           {channels.map((channel) => (

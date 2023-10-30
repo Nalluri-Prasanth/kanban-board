@@ -2,11 +2,14 @@
 
 import React from "react";
 import Kanban from "./Kanban";
+// import DoubleDropdown from "./DoubleDropdown";
 
 function App() {
   return (
     <div className="App">
-      <Kanban />
+   <Kanban /> 
+
+  
     </div>
   );
 }
