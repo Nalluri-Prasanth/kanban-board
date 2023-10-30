@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DoubleDropdown = () => {
+const DoubleDropdown = ({ handleGroupingClick }) => {
   const [displayDropdownVisible, setDisplayDropdownVisible] = useState(false);
   const [groupingDropdownVisible, setGroupingDropdownVisible] = useState(false);
   const [orderingDropdownVisible, setOrderingDropdownVisible] = useState(false);
@@ -27,10 +27,9 @@ const DoubleDropdown = () => {
               <button onClick={toggleGroupingDropdown}>Grouping   🢓</button>
               {groupingDropdownVisible && (
                 <div className="sub-dropdown">
-                  <button>Status</button>
-                  <button>User</button>
-                  <button>Priority</button>
-             
+                  <button onClick={() => { handleGroupingClick("Status"); }}>Status</button>
+                  <button onClick={() => { handleGroupingClick("User"); }}>User</button>
+                  <button onClick={() => { handleGroupingClick("Priority"); }}>Priority</button>
                 </div>
               )}
             </div>
@@ -40,7 +39,6 @@ const DoubleDropdown = () => {
                 <div className="sub-dropdown">
                   <button>Priority</button>
                   <button>Title</button>
-                 
                 </div>
               )}
             </div>
